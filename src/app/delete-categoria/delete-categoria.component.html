@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mb-5 mt-5 d-flex justify-content-center align-items-center">
+            <div class="card mb-5 mr-4 ml-4" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ categoria.descricao }}</h5>
+                  <p class="card-text">Código: {{ categoria.id }}</p>
+
+                  <h5>Deseja realmente deletar essa categoria?</h5>
+                  <a href="#" class="btn btn-primary mr-3" (click)="btnSim()">Sim</a>
+                  <a href="#" class="btn btn-primary" (click)="btnNao()">Não</a>
+                </div>
+              </div>
+        </div>
+    </div>  
+    </div>

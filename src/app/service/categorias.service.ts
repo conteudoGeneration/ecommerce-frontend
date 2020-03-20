@@ -24,5 +24,9 @@ export class CategoriasService {
   putCategoria( categoria: Categoria){
     return this.http.put("http://localhost:8080/categorias", categoria)
   }
+
+  delete(id:number){
+    return this.http.delete(`http://localhost:8080/categorias/${id}`)
+  }
  
 }

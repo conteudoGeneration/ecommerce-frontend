@@ -12,7 +12,9 @@ import { FindAllProdutoComponent } from './find-all-produto/find-all-produto.com
 import { HttpClientModule } from '@angular/common/http'; //import do HttpClientModule
 import { FormsModule } from '@angular/forms';
 import { FindAllCategoriaComponent } from './find-all-categoria/find-all-categoria.component';
-import { PostCategoriaComponent } from './post-categoria/post-categoria.component'; //import do FormsModule
+import { PostCategoriaComponent } from './post-categoria/post-categoria.component';
+import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
+
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { PostCategoriaComponent } from './post-categoria/post-categoria.componen
     ContactComponent,
     FindAllProdutoComponent,
     FindAllCategoriaComponent,
-    PostCategoriaComponent
+    PostCategoriaComponent,
+    DeleteCategoriaComponent
   ],
   imports: [
     BrowserModule,

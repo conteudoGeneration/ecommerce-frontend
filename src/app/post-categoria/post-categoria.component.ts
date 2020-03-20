@@ -32,9 +32,8 @@ export class PostCategoriaComponent implements OnInit {
   
 
   findById(id:number){
-    this.categoriasService.getByIdCategoria(id).subscribe((resp: any)=>{
-      this.categoria.id = resp.id;
-      this.categoria.descricao = resp.descricao;
+    this.categoriasService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
+      this.categoria=resp
       console.log(this.categoria);
     }, err => {
       console.log(`Erro cod: ${err.status}`)
