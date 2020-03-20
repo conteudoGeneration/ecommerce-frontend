@@ -1,0 +1,18 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-12 mb-5 mt-5 d-flex justify-content-center align-items-center">
+        <div class="card mb-5 mr-4 ml-4" style="width: 18rem;" *ngFor="let produto of listaProdutos">
+            <img class="card-img-top" src="https://www.casasbahia-imagens.com.br/TelefoneseCelulares/Smartphones/Android/1500966412/1194935281/celular-motorola-moto-g8-plus-azul-safira-64gb-camera-tripla-48mp-5mp-16mp-1500966412.jpg" alt="Imagem de capa do card">
+            <div class="card-body">
+              <h5 class="card-title">{{ produto.nome }}</h5>
+              <p class="card-text">Qtd Estoque: {{ produto.qtdStoque }}</p>
+              <p class="card-text">R$ {{ produto.valor }}</p>
+              <a href="#" class="btn btn-primary">Comprar</a>
+            </div>
+          </div>
+    </div>
+</div>  
+</div>
+
+
+

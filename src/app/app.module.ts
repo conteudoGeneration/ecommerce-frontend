@@ -8,6 +8,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { FindAllProdutoComponent } from './find-all-produto/find-all-produto.component';
+import { HttpClientModule } from '@angular/common/http'; //import do HttpClientModule
+import { FormsModule } from '@angular/forms';
+import { FindAllCategoriaComponent } from './find-all-categoria/find-all-categoria.component';
+import { PostCategoriaComponent } from './post-categoria/post-categoria.component'; //import do FormsModule
+
 
 @NgModule({
   declarations: [
@@ -16,11 +22,16 @@ import { ContactComponent } from './contact/contact.component';
     NavbarComponent,
     FooterComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    FindAllProdutoComponent,
+    FindAllCategoriaComponent,
+    PostCategoriaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
