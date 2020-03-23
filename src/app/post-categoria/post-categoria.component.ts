@@ -9,8 +9,8 @@ import { Categoria } from '../model/Categoria';
   styleUrls: ['./post-categoria.component.css']
 })
 export class PostCategoriaComponent implements OnInit {
-
   
+  id:number;
   novo: boolean = false;
   categoria: Categoria = new Categoria(0,"")
 
@@ -18,12 +18,12 @@ export class PostCategoriaComponent implements OnInit {
 
   ngOnInit() {
     
-    let id:number = this.route.snapshot.params["id"];
+    this.id = this.route.snapshot.params["id"];
    
-    if (id == undefined){
+    if (this.id == undefined){
       this.novo = true;
     } else {
-      this.findById(id);
+      this.findById(this.id);
       this.novo = false;
       
     }
@@ -32,7 +32,7 @@ export class PostCategoriaComponent implements OnInit {
   
 
   findById(id:number){
-    this.categoriasService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
+    this.categoriasService.getByIdCategoria(this.id).subscribe((resp: Categoria)=>{
       this.categoria=resp
       console.log(this.categoria);
     }, err => {

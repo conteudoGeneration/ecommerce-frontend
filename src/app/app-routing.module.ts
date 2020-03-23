@@ -9,7 +9,7 @@ import { PostCategoriaComponent } from './post-categoria/post-categoria.componen
 import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 
 const routes: Routes = [
-  { path:'', component: HomeComponent},
+  { path:'', redirectTo:'home', pathMatch:  'full' },
   { path:'home', component: HomeComponent },
   { path:'about', component: AboutComponent },
   { path:'contact', component: ContactComponent },

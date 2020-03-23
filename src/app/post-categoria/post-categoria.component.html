@@ -1,10 +1,21 @@
 <div class="container">
 
-    <div class="form-group col-sm-12 mb-5 mt-5">
+    <!--div class="form-group col-sm-12 mb-5 mt-5">
         <label for="codigo">Código</label>
         <input type="text" class="form-control" id="codigo" placeholder="Descrição" [(ngModel)]="categoria.id" disabled>
-      </div>
+      </div-->
 
+
+  <div *ngIf="id; else elseBlock">
+    <h1 class="mt-5 text-center">Edição de categorias</h1>
+  </div>
+  <ng-template #elseBlock>
+    <h1 class="mt-5 text-center">Cadastro de categorais</h1>
+  </ng-template>
+
+     
+
+      
 
     <div class="form-group col-sm-12 mb-5 mt-5">
         <label for="'descricao'">Descrição</label>

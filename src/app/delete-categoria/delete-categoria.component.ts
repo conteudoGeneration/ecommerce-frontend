@@ -9,7 +9,7 @@ import { Categoria } from '../model/Categoria';
   styleUrls: ['./delete-categoria.component.css']
 })
 export class DeleteCategoriaComponent implements OnInit {
-
+  delOk:boolean = false
   categoria: Categoria = new Categoria(0,"")
   
   constructor(private route: ActivatedRoute, private router:Router, private categoriasService: CategoriasService) { }
@@ -30,7 +30,9 @@ export class DeleteCategoriaComponent implements OnInit {
 
   btnSim(){
     this.categoriasService.delete(this.categoria.id).subscribe(()=>{
+      this.delOk = true
       this.router.navigate(['/categorias']);
+
   }, err => {
     console.log(err);
   });
