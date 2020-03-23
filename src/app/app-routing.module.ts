@@ -9,6 +9,7 @@ import { PostCategoriaComponent } from './post-categoria/post-categoria.componen
 import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 import { FindByNameCategoriaComponent } from './find-by-name-categoria/find-by-name-categoria.component';
 import { PostProdutoComponent } from './post-produto/post-produto.component';
+import { DeleteProdutoComponent } from './delete-produto/delete-produto.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'home', pathMatch:  'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path:'deleteCategoria/:id', component: DeleteCategoriaComponent },
   { path: 'findByNameCategoria', component: FindByNameCategoriaComponent },
   { path:'postProdutos', component: PostProdutoComponent },
-  { path:'postProdutos/:id', component: PostProdutoComponent }
+  { path:'postProdutos/:id', component: PostProdutoComponent },
+  { path:'deleteProduto/:id', component: DeleteProdutoComponent }
     
 
 ];

@@ -12,7 +12,7 @@ export class PostCategoriaComponent implements OnInit {
   
   id:number;
   novo: boolean = false;
-  categoria: Categoria = new Categoria(0,"")
+  categoria: Categoria = new Categoria()
 
   constructor(private route: ActivatedRoute, private router:Router, private categoriasService: CategoriasService) { }
 

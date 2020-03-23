@@ -16,6 +16,7 @@ import { PostCategoriaComponent } from './post-categoria/post-categoria.componen
 import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 import { FindByNameCategoriaComponent } from './find-by-name-categoria/find-by-name-categoria.component';
 import { PostProdutoComponent } from './post-produto/post-produto.component';
+import { DeleteProdutoComponent } from './delete-produto/delete-produto.component';
 
 
 
@@ -32,7 +33,8 @@ import { PostProdutoComponent } from './post-produto/post-produto.component';
     PostCategoriaComponent,
     DeleteCategoriaComponent,
     FindByNameCategoriaComponent,
-    PostProdutoComponent
+    PostProdutoComponent,
+    DeleteProdutoComponent
   ],
   imports: [
     BrowserModule,

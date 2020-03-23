@@ -13,11 +13,11 @@ import { ProdutosService } from '../service/produtos.service';
 export class PostProdutoComponent implements OnInit {
   
   novo: boolean = false;
-  id:number;
+  
   listaCategorias: Categoria[]
   idCat:number;
-  categoria: Categoria = new Categoria(0,"")
-  produto: Produto = new Produto(0,"",0,0,null)
+  categoria = new Categoria();
+  produto = new Produto()
 
 
   constructor(private route: ActivatedRoute, private router: Router, private categoriasService: CategoriasService, private prudutosService: ProdutosService) { }
@@ -25,12 +25,12 @@ export class PostProdutoComponent implements OnInit {
   ngOnInit() {
     this.findAllCategoria()
     
-    this.id = this.route.snapshot.params["id"];
+    let id = this.route.snapshot.params["id"];
     
-    if (this.id == undefined){
+    if (id == undefined){
       this.novo = true;
     } else {
-      this.findById(this.id);
+      this.findById(id);
       this.novo = false;
       
     }
@@ -46,23 +46,25 @@ export class PostProdutoComponent implements OnInit {
   getIdCategoria(){
     this.categoriasService.getByIdCategoria(this.idCat).subscribe((resp: Categoria)=>{
       this.categoria = resp;
-      console.log("essa é a categoria" + this.categoria.id)
+      console.log("essa é a categoria " + this.categoria.id)
     })
   }
 
   findById(id:number){
-    this.prudutosService.getByIdProduto(this.id).subscribe((resp: Produto)=>{
+    this.prudutosService.getByIdProduto(id).subscribe((resp: Produto)=>{
       this.produto=resp
-      console.log("essa é o produto" + this.produto.id)
+      console.log("essa é o produto " + this.produto.id)
     }, err => {
       console.log(`Erro cod: ${err.status}`)
     });
   }
 
   save(){
+    
+    this.produto.categoria = this.categoria
+    
     if (this.novo) {
-      this.produto.categoria.id = this.categoria.id;
-      this.prudutosService.postProduto(this.produto).subscribe((resp: Produto)=>{
+        this.prudutosService.postProduto(this.produto).subscribe((resp: Produto)=>{
         this.produto= resp;
         this.router.navigate(['/produtos']);
       })
