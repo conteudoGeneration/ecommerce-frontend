@@ -7,7 +7,9 @@
               <h5 class="card-title">{{ produto.nome }}</h5>
               <p class="card-text">Qtd Estoque: {{ produto.qtdStoque }}</p>
               <p class="card-text">R$ {{ produto.valor }}</p>
-              <a href="#" class="btn btn-primary">Comprar</a>
+              <p class="card-text">Categoria: {{ produto.categoria.descricao }}</p>
+
+              <a class="btn btn-primary" [routerLink]="['/postProdutos', produto.id]">Editar</a>
             </div>
           </div>
     </div>

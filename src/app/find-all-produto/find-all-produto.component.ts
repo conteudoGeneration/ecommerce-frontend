@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from '../service/produtos.service';
 import { Produto } from '../model/Produto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-find-all-produto',
@@ -11,7 +12,7 @@ export class FindAllProdutoComponent implements OnInit {
 
   listaProdutos: Produto[];
 
-  constructor(private produtosService: ProdutosService) { }
+  constructor(private produtosService: ProdutosService, private router: Router) {}
 
   ngOnInit(): void {
     this.findAllProdutos()
@@ -24,6 +25,10 @@ export class FindAllProdutoComponent implements OnInit {
     },err =>{
         alert(`Erro cod: ${err.message}`);
     })
+  }
+
+  novo(){
+    this.router.navigate(['/postProdutos','produto.id']);
   }
 
 }

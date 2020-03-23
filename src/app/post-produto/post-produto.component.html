@@ -1,0 +1,37 @@
+<div class="form-group col-sm-12"> 
+    <label for="exampleInputEmail1">
+        Nome
+    </label> 
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome" [(ngModel)]="produto.nome"> 
+</div> 
+
+<div class="form-group col-sm-12"> 
+    <label for="exampleInputPassword1">
+        Quantidade em estoque
+    </label> 
+    <input type="text" class="form-control" placeholder="Estoque" [(ngModel)]="produto.qtdStoque"> 
+</div> 
+
+<div class="form-group col-sm-12"> 
+    <label for="exampleInputPassword1">
+        preco
+    </label> 
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="valor" [(ngModel)]="produto.valor"> 
+</div> 
+
+<div class="form-group col-sm-12"> 
+    <label for="inputState">
+        Categoria
+    </label> 
+    <select name="nome" [(ngModel)]="idCat" (change)="getIdCategoria()" class="form-control"> 
+        <option *ngFor="let item of listaCategorias" value={{item.id}}> 
+            {{item.descricao}} 
+        </option> 
+    </select> 
+</div> 
+
+<div div class="form-group col-sm-4"> 
+    <button (click)="save()" class="btn btn-info">
+        Salvar
+    </button>
+</div>
