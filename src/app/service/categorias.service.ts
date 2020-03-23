@@ -28,5 +28,9 @@ export class CategoriasService {
   delete(id:number){
     return this.http.delete(`http://localhost:8080/categorias/${id}`)
   }
+
+  findByName(descricao:string){
+    return this.http.get(`http://localhost:8080/categorias/nome/${descricao}`)
+  }
  
 }

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { FindAllCategoriaComponent } from './find-all-categoria/find-all-categoria.component';
 import { PostCategoriaComponent } from './post-categoria/post-categoria.component';
 import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
+import { FindByNameCategoriaComponent } from './find-by-name-categoria/find-by-name-categoria.component';
 
 
 
@@ -28,7 +29,8 @@ import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.co
     FindAllProdutoComponent,
     FindAllCategoriaComponent,
     PostCategoriaComponent,
-    DeleteCategoriaComponent
+    DeleteCategoriaComponent,
+    FindByNameCategoriaComponent
   ],
   imports: [
     BrowserModule,
