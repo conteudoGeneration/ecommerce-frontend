@@ -21,3 +21,29 @@
     
   </div>
 </div>
+
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card mb-5 mr-4 ml-4" style="width: 18rem;" *ngFor="let produto of listaProdutos">
+            <img class="card-img-top" src="https://www.casasbahia-imagens.com.br/TelefoneseCelulares/Smartphones/Android/1500966412/1194935281/celular-motorola-moto-g8-plus-azul-safira-64gb-camera-tripla-48mp-5mp-16mp-1500966412.jpg" alt="Imagem de capa do card">
+            <div class="card-body">
+              <h5 class="card-title">{{ produto.nome }}</h5>
+              <p class="card-text">Qtd Estoque: {{ produto.qtdStoque }}</p>
+              <p class="card-text">R$ {{ produto.valor }}</p>
+              <p class="card-text">Categoria: {{ produto.categoria.descricao }}</p>
+            </div>
+          </div>
+      </div>
+      
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Próximo</span>
+    </a>
+  </div>

@@ -10,6 +10,8 @@ import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.co
 import { FindByNameCategoriaComponent } from './find-by-name-categoria/find-by-name-categoria.component';
 import { PostProdutoComponent } from './post-produto/post-produto.component';
 import { DeleteProdutoComponent } from './delete-produto/delete-produto.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'home', pathMatch:  'full' },
@@ -24,7 +26,9 @@ const routes: Routes = [
   { path: 'findByNameCategoria', component: FindByNameCategoriaComponent },
   { path:'postProdutos', component: PostProdutoComponent },
   { path:'postProdutos/:id', component: PostProdutoComponent },
-  { path:'deleteProduto/:id', component: DeleteProdutoComponent }
+  { path:'deleteProduto/:id', component: DeleteProdutoComponent },
+  { path:'cadastrese', component: CadastroComponent },
+  { path:'login', component: LoginComponent }
     
 
 ];
