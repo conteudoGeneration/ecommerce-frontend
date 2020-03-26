@@ -15,8 +15,14 @@ export class DeleteCategoriaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router:Router, private categoriasService: CategoriasService) { }
 
   ngOnInit() {
-    let id:number = this.route.snapshot.params["id"];
-    this.findById(id)
+    if (localStorage.getItem('token').includes("Basic") && localStorage.getItem('vendedor') == "false" ){
+      alert('Faça o login primeiro')
+      this.router.navigate(['/login'])
+    } else {
+      let id:number = this.route.snapshot.params["id"];
+      this.findById(id)
+    }
+    
   }
 
   findById(id:number){

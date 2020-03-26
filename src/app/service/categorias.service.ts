@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Categoria } from '../model/Categoria';
 
 @Injectable({
@@ -9,28 +9,33 @@ export class CategoriasService {
 
   constructor(private http: HttpClient) { }
 
+  token = {
+    headers: new HttpHeaders().set
+    ('Authorization',localStorage.getItem('token'))
+  }
+
   getAllCategorias(){
-    return this.http.get("http://localhost:8080/categorias")
+    return this.http.get("http://localhost:8080/categorias", this.token)
   }
 
   getByIdCategoria(id: number){
-    return this.http.get(`http://localhost:8080/categorias/${id}`)
+    return this.http.get(`http://localhost:8080/categorias/${id}`, this.token)
   }
 
   postCategoria(categoria: Categoria){
-    return this.http.post("http://localhost:8080/categorias", categoria)
+    return this.http.post("http://localhost:8080/categorias", categoria, this.token)
   }
 
   putCategoria( categoria: Categoria){
-    return this.http.put("http://localhost:8080/categorias", categoria)
+    return this.http.put("http://localhost:8080/categorias", categoria, this.token)
   }
 
   delete(id:number){
-    return this.http.delete(`http://localhost:8080/categorias/${id}`)
+    return this.http.delete(`http://localhost:8080/categorias/${id}`, this.token)
   }
 
   findByName(descricao:string){
-    return this.http.get(`http://localhost:8080/categorias/nome/${descricao}`)
+    return this.http.get(`http://localhost:8080/categorias/nome/${descricao}`, this.token)
   }
  
 }

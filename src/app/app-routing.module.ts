@@ -12,6 +12,7 @@ import { PostProdutoComponent } from './post-produto/post-produto.component';
 import { DeleteProdutoComponent } from './delete-produto/delete-produto.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
+import { CompraComponent } from './compra/compra.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'home', pathMatch:  'full' },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path:'postProdutos/:id', component: PostProdutoComponent },
   { path:'deleteProduto/:id', component: DeleteProdutoComponent },
   { path:'cadastrese', component: CadastroComponent },
-  { path:'login', component: LoginComponent }
+  { path:'login', component: LoginComponent },
+  { path: 'compra', component: CompraComponent }
     
 
 ];

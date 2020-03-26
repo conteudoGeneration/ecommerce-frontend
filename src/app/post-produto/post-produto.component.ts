@@ -23,6 +23,11 @@ export class PostProdutoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private categoriasService: CategoriasService, private prudutosService: ProdutosService) { }
 
   ngOnInit() {
+
+    if (localStorage.getItem('token').includes("Basic") && localStorage.getItem('vendedor') == "false" ){
+      alert('Faça o login primeiro')
+      this.router.navigate(['/login'])
+    } else {
     this.findAllCategoria()
     
     let id = this.route.snapshot.params["id"];
@@ -34,7 +39,7 @@ export class PostProdutoComponent implements OnInit {
       this.novo = false;
       
     }
-
+  }
   }
 
   findAllCategoria(){

@@ -19,6 +19,8 @@ import { PostProdutoComponent } from './post-produto/post-produto.component';
 import { DeleteProdutoComponent } from './delete-produto/delete-produto.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { CompraComponent } from './compra/compra.component';
+import { NavstandardComponent } from './navstandard/navstandard.component';
 
 
 
@@ -38,7 +40,9 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     PostProdutoComponent,
     DeleteProdutoComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    CompraComponent,
+    NavstandardComponent
   ],
   imports: [
     BrowserModule,

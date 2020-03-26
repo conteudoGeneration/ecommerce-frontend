@@ -17,6 +17,7 @@ export class CadastroComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    
   }
 
   conferirSenha(event: any) {

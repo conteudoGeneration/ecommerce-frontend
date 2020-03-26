@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from '../service/produtos.service';
 import { Router } from '@angular/router';
 import { Produto } from '../model/Produto';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -19,11 +20,13 @@ export class HomeComponent implements OnInit {
   }
 
   findAllProdutos(){
+       
     this.produtosService.getAllProdutos().subscribe((resp: Produto[])=>{
       this.listaProdutos= resp;
-    },err =>{
-        alert(`Erro cod: ${err.message}`);
+      
+
     })
   }
 
+ 
 }

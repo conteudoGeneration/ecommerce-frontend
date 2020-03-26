@@ -20,10 +20,7 @@ export class FindAllProdutoComponent implements OnInit {
 
   findAllProdutos(){
     this.produtosService.getAllProdutos().subscribe((resp: Produto[])=>{
-      console.log(resp);
       this.listaProdutos= resp;
-    },err =>{
-        alert(`Erro cod: ${err.message}`);
     })
   }
 
