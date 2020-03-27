@@ -12,9 +12,11 @@ import { Categoria } from '../model/Categoria';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   produto = new Produto()
-  listaCategorias: Categoria[];
-  listaProdutos: Produto[];
+  listaCategorias: Categoria[]
+  produtosCategoria: Produto[]
+  listaProdutos: Produto[]
   nome:string = localStorage.getItem('nome')
 
   id:number = this.route.snapshot.params["id"];
@@ -23,7 +25,25 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.findAllProdutos()
-    this.findAllCategorias();
+    this.findAllCategorias()
+    this.findByIdCategoria(0)
+
+  }
+
+  findByIdCategoria(id:number){
+    if ( id >= 1 ){
+      this.categoriasService.getByIdCategoria(id).subscribe((resp: Categoria)=>{
+        this.produtosCategoria = resp.produtos  
+        console.log(resp)      
+      }, err => {
+        console.log(this.produtosCategoria)
+      });
+    } else {
+      this.produtosService.getAllProdutos().subscribe((resp: Produto[])=>{
+        this.produtosCategoria = resp
+      })
+    }
+    
   }
 
   findAllProdutos(){
@@ -35,10 +55,8 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  
   findAllCategorias(){
     this.categoriasService.getAllCategorias().subscribe((resp: Categoria[])=>{
-      console.log(resp);
       this.listaCategorias= resp;
     },err =>{
         alert(`Erro cod: ${err.message}`);
@@ -54,6 +72,8 @@ export class HomeComponent implements OnInit {
       });
     }
   
-
+    novo(){
+      this.router.navigate(['/postProdutos','produto.id']);
+    }
  
 }

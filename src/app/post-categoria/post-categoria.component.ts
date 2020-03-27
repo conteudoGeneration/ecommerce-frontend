@@ -17,11 +17,13 @@ export class PostCategoriaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router:Router, private categoriasService: CategoriasService) { }
 
   ngOnInit() {
+
     
-    /* if (localStorage.getItem('token') && localStorage.getItem('vendedor') == "false" ){
+    
+    if (localStorage.getItem('token') && localStorage.getItem('vendedor') == "false" ){
       alert('Faça o login primeiro')
       this.router.navigate(['/login'])
-    }else {*/
+    }else {
         this.id = this.route.snapshot.params["id"];
         console.log(this.id)
       if (this.id == undefined){
@@ -32,7 +34,7 @@ export class PostCategoriaComponent implements OnInit {
         this.novo = false;
         console.log('Esse é o novo se false:' + this.novo)
       } 
-    
+    }
     
   
   }
@@ -42,7 +44,7 @@ export class PostCategoriaComponent implements OnInit {
   findById(id:number){
     this.categoriasService.getByIdCategoria(this.id).subscribe((resp: Categoria)=>{
       this.categoria=resp
-      console.log(this.categoria);
+    
     }, err => {
       console.log(`Erro cod: ${err.status}`)
     });
