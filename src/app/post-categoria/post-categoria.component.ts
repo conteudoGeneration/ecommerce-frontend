@@ -18,20 +18,21 @@ export class PostCategoriaComponent implements OnInit {
 
   ngOnInit() {
     
-    if (localStorage.getItem('token') && localStorage.getItem('vendedor') == "false" ){
+    /* if (localStorage.getItem('token') && localStorage.getItem('vendedor') == "false" ){
       alert('Faça o login primeiro')
       this.router.navigate(['/login'])
-    }else {
+    }else {*/
         this.id = this.route.snapshot.params["id"];
-    
+        console.log(this.id)
       if (this.id == undefined){
         this.novo = true;
+        console.log('Esse é o novo se ture:' + this.novo)
       } else {
         this.findById(this.id);
         this.novo = false;
-        
+        console.log('Esse é o novo se false:' + this.novo)
       } 
-    }
+    
     
   
   }

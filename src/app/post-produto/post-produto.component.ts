@@ -78,7 +78,10 @@ export class PostProdutoComponent implements OnInit {
       this.prudutosService.putProduto(this.produto).subscribe((resp: Produto)=>{
         this.produto= resp;
         this.router.navigate(['/produtos']);
-      })
+      }, err => {
+        console.log(this.produto)
+      }
+      )
     }
   }
 
