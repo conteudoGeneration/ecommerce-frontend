@@ -11,13 +11,7 @@ export class AppComponent {
 
   logado:boolean
 
-  ngOnInit(): void {
-    if (localStorage.getItem('token').includes("Basic")) {
-      this.logado = true
-    } else {
-      this.logado = false
-    }
-  }
+  ngOnInit(): void {  }
 
 }
 

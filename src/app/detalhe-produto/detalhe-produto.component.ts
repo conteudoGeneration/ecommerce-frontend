@@ -1,35 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutosService } from '../service/produtos.service';
+import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ProdutosService } from '../service/produtos.service';
 import { CategoriasService } from '../service/categorias.service';
 
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { faMinus } from '@fortawesome/free-solid-svg-icons'
-import { NumberValueAccessor } from '@angular/forms';
-
 @Component({
-  selector: 'app-compra',
-  templateUrl: './compra.component.html',
-  styleUrls: ['./compra.component.css']
+  selector: 'app-detalhe-produto',
+  templateUrl: './detalhe-produto.component.html',
+  styleUrls: ['./detalhe-produto.component.css']
 })
-export class CompraComponent implements OnInit {
-  faMinus = faMinus
-  faPlus = faPlus
+export class DetalheProdutoComponent implements OnInit {
   
   produto = new Produto()
-  
-  numero:number = 0
-  valor:number
   descricao:string
   nome:string = localStorage.getItem('nome')
-
+  logado:string
   constructor(private route: ActivatedRoute, private produtosService: ProdutosService, private categoriasService: CategoriasService, private router: Router) {}
 
   ngOnInit(): void {    
-  
     let id:number = this.route.snapshot.params["id"];
     this.findById(id)
+
+    if (localStorage.getItem('token')){
+      this.logado = 'logado'
+    } else {
+      this.logado = 'deslogado'
+    }
   }
   
 
@@ -42,15 +39,8 @@ export class CompraComponent implements OnInit {
     });
   }
 
-  somar(){
-    this.numero = this.numero + 1
-    this.valor = this.numero * this.produto.valor
-  }
+  
 
-  sub(){
-    this.numero = this.numero - 1
-    this.valor = this.numero * this.produto.valor
-  }
 
 
 }

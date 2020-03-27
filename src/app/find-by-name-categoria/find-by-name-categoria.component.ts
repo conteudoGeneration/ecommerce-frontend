@@ -15,10 +15,7 @@ export class FindByNameCategoriaComponent implements OnInit {
   constructor(private categoriasService: CategoriasService, private router: Router) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('token').includes("Basic") && localStorage.getItem('vendedor') == "false" ){
-      alert('Faça o login primeiro')
-      this.router.navigate(['/login'])
-    }
+   
   }
 
   findByNameCategoria(){

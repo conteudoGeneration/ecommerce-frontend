@@ -1,10 +1,4 @@
-<div *ngIf="logado; else elseBlock">
-    <app-navbar></app-navbar>
-</div>
-<ng-template #elseBlock>
-    <app-navstandard></app-navstandard>
-</ng-template>
-
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 

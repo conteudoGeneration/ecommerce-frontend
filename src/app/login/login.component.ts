@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 import { Location } from '@angular/common';
+import { Usuario } from '../model/Usuario';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { Location } from '@angular/common';
 export class LoginComponent implements OnInit {
 
   userLogin = new UsuarioLogin ()
+  user = new Usuario()
 
   constructor(private router: Router, private authService: AuthService, private location: Location) { }
 
@@ -26,8 +28,9 @@ export class LoginComponent implements OnInit {
       this.userLogin = resp
       localStorage.setItem("token", this.userLogin.token)
       localStorage.setItem("vendedor", this.userLogin.vendedor.toString())
-      this.router.navigate(['/home'])
-      location.assign('/home')     
+      localStorage.setItem("nome", this.userLogin.nome)
+      this.router.navigate(['/produtos'])
+      location.assign('/produtos')     
     }, err =>{
       alert('campos inválidos')
     }

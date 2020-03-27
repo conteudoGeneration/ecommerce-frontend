@@ -20,7 +20,9 @@ import { DeleteProdutoComponent } from './delete-produto/delete-produto.componen
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CompraComponent } from './compra/compra.component';
-import { NavstandardComponent } from './navstandard/navstandard.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.component';
+
 
 
 
@@ -42,13 +44,14 @@ import { NavstandardComponent } from './navstandard/navstandard.component';
     LoginComponent,
     CadastroComponent,
     CompraComponent,
-    NavstandardComponent
+    DetalheProdutoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

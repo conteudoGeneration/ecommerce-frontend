@@ -9,15 +9,30 @@ import { Location } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
 
-  vendedor:boolean
+  logado:string
+  token:string
+  nome:string = localStorage.getItem('nome')
   constructor(private router: Router, private location: Location) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('vendedor') == "true"){
-      this.vendedor = true
+
+    this.token = localStorage.getItem('token')
+    
+
+    if (this.token){
+      this.logado = 'logado '
+        if (localStorage.getItem('vendedor') == 'true'){
+          this.logado += 'vendedor'
+        } else{
+          this.logado += 'cliente'
+        } 
     } else {
-      this.vendedor = false
+      this.logado = 'deslogado'
+      
     }
+
+    
+
   }
 
 

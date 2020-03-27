@@ -24,7 +24,7 @@ export class PostProdutoComponent implements OnInit {
 
   ngOnInit() {
 
-    if (localStorage.getItem('token').includes("Basic") && localStorage.getItem('vendedor') == "false" ){
+    if (localStorage.getItem('token') && localStorage.getItem('vendedor') == "false" ){
       alert('Faça o login primeiro')
       this.router.navigate(['/login'])
     } else {

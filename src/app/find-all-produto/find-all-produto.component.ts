@@ -11,11 +11,24 @@ import { Router } from '@angular/router';
 export class FindAllProdutoComponent implements OnInit {
 
   listaProdutos: Produto[];
+  vendedor:string
 
   constructor(private produtosService: ProdutosService, private router: Router) {}
 
   ngOnInit(): void {
     this.findAllProdutos()
+    if (localStorage.getItem('token')){
+        
+      if (localStorage.getItem('vendedor') == 'true'){
+          this.vendedor = 'vendedor'
+        } else{
+          this.vendedor = 'cliente'
+        } 
+    } else {
+      this.vendedor = 'deslogado'
+      this.findAllProdutos()
+    }
+   
   }
 
   findAllProdutos(){

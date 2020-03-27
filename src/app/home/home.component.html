@@ -1,49 +1,61 @@
-<div class="card bg-dark text-white">
-  <img class="card-img opacity-img-05" src="https://i.imgur.com/8geMcyw.jpg" alt="Imagem do card">
-  
-  <div class="card-img-overlay">
 
-      <div class="row">
+<p class="text-center bg-warning text-secondary text-uppercase font-weight-bold p-2 m-0">Todo o site com até 30% de desconto</p>
 
-          <div class="col-md-12 d-flex justify-content-center">
-              <h1 class="card-title mt-5">Sejam bem vindes!</h1> 
-          </div>
-
-      </div>
-
-      <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-md-10 mt-4">
-              <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nulla delectus sit aperiam consectetur repudiandae unde? Ut itaque deleniti ab et totam quo! Iste minus quisquam est soluta consectetur odit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa aut repellendus eos deleniti magni cupiditate dolore deserunt sit quasi doloribus, fuga at sapiente suscipit blanditiis iusto nihil maxime. Beatae, fugit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, alias! Ullam deserunt odio, quidem officiis aut soluta magnam facilis impedit sit maiores eveniet ipsam dolorem explicabo odit, officia non ex! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat vel aperiam quidem dolore quibusdam unde illo voluptate perferendis expedita ab iusto ex, non sequi minus rerum maiores! Eligendi, at doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae atque dolore, repudiandae quasi labore adipisci porro, nobis repellat doloremque, doloribus alias beatae assumenda quaerat veniam nisi molestias tempora autem minus?</p>
-          </div>
-      </div>
-    
-    
-    
-  </div>
-</div>
-
+<!--Carousel-->
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="card mb-5 mr-4 ml-4" style="width: 18rem;" *ngFor="let produto of listaProdutos">
-            <img class="card-img-top" src="https://www.casasbahia-imagens.com.br/TelefoneseCelulares/Smartphones/Android/1500966412/1194935281/celular-motorola-moto-g8-plus-azul-safira-64gb-camera-tripla-48mp-5mp-16mp-1500966412.jpg" alt="Imagem de capa do card">
-            <div class="card-body">
-              <h5 class="card-title">{{ produto.nome }}</h5>
-              <p class="card-text">Qtd Estoque: {{ produto.qtdStoque }}</p>
-              <p class="card-text">R$ {{ produto.valor }}</p>
-              <p class="card-text">Categoria: {{ produto.categoria.descricao }}</p>
-            </div>
-          </div>
-      </div>
-      
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://i.imgur.com/PWsbJAC.png" alt="Primeiro Slide">
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Próximo</span>
-    </a>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://i.imgur.com/kKLjcqj.png" alt="Segundo Slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://i.imgur.com/ozo0WQy.png" alt="Terceiro Slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://i.imgur.com/1eO90UV.png" alt="Terceiro Slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://i.imgur.com/p78gc1G.png" alt="Terceiro Slide">
+    </div>
   </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+  </a>
+</div>
+
+<h2 class="text-center bg-secondary text-white text-uppercase font-weight-bold p-4 mb-3">Eletrônicos com o melhor preço do mercado</h2>
+
+<div class="row" >
+  <div class="col-md-12 d-flex justify-content-center" >
+    <a class="p-3 mr-3 ml-3 text-secondary text-uppercase font-weight-bold" (click)="findById(id)" *ngFor="let categoria of listaCategorias"> {{ categoria.descricao }} </a> 
+  </div>
+  
+</div>
+
+<hr>
+
+<div class="container">
+
+  <div class="card-columns">
+    <div class="card" style="width: 18rem;" *ngFor="let produto of listaProdutos">
+      <img class="card-img-top" src="{{ produto.urlImagem }}" alt="Imagem de capa do card">
+      <hr>
+      <div class="card-body">
+        <h5 class="card-title">{{ produto.nome }}</h5>
+        <p class="card-text">Qtd Estoque: {{ produto.qtdStoque }}</p>
+        <p class="card-text font-weight-bold m-0" aria-describedby="preco">R$ {{ produto.valor }}</p>
+        <small id="preco" class="form-text m-0 text-muted">Em até 12x no cartão</small>
+        
+      </div>
+    </div>
+    </div>
+</div>
